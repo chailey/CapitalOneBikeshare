@@ -1,0 +1,182 @@
+extends layout
+
+
+block content
+
+
+    //.container-fluid
+        //.row
+
+    .container-fluid
+        .row
+
+            nav.col-md-2.d-none.d-md-block.bg-light.sidebar
+                .sidebar-sticky
+                button(class="btn btn-info" data-toggle='collapse' data-target='#sideBar') About Me
+                div#sideBar.collapse
+                    h3(align='center') Chris Hailey
+                    p You can reach out to me via email (hailey[at]usc[dot]edu). Check out my Github repo @chailey for more cool projects like this! Be sure to follow me on Medium @chris_hailey and Twitter @ChrisH_fintech
+
+            main.col-md-9.ml-sm-auto.col-lg-10.px-4(role='main')
+                .d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3
+
+
+                div(align="center")
+                    h1(style="color:blue;") METRO
+                    h1(style="color:red;") BIKESHARE
+                    h1(style="color:black;") DATA VISUALIZATION
+                    img(src="images/los-angeles-metro-logo.png")
+                    img(src="images/bike.png")
+                    img(src="images/bike.png")
+                    img(src="images/analysis.png")
+
+
+
+                h2 Intro
+                p
+                    strong Welcome!
+                    |  Thank you for checking out my data visualization dashboard for bike sharing trends in Los Angeles!
+                    | While biking is itself a centuries old activity, the concept of bike sharing has only been developed
+                    | in the last decade. It started off mostly as small scale operations in bicycle friendly cities like
+                    | New York and Amsterdam, but it has since received exponential growth all around the world and is only
+                    | becoming bigger each year:
+                div(align="center")
+                    figure
+                        img(src="images/bikesharing.png", with="350px", height="350px")
+                        figcaption
+                            em Figure 1: The exponential growth of bikesharing from 2000-2013. Since then, it has only gotten bigger.
+                p
+                    | One of the major benefits to having a bikesharing program is its ease of access to people anywhere in
+                    | the city, as well as its ability to solve one of the biggest challenges in transportation planning:
+                    | the last-mile problem. Here in Los Angeles, in fact, much of the bikesharing growth stems from the
+                    | placement of bike stations near transit stops, like this one near USC:
+                div(align="center")
+                    figure
+                        img(src="images/metrobikes.jpg", width="500px", height="350px")
+                        figcaption
+                            em Figure 2: A Metro Bikeshare station near USC.
+
+                p
+                    | While Los Angeles may be new to the bikesharing game, one must not underestimate the effects it has
+                    | had on the city already. With these bike stations near rail and bus lines, as well as densely populated
+                    | areas, many people have become incentivized to abandon their personal cars and move to more efficient
+                    | modes of public transportation.
+                div(align="center")
+                    figure
+                        img(src="images/metrotrain.jpg", width="500px", height="300px")
+                        figcaption
+                            em Figure 3: Los Angeles's rapid expansion of rail transit and its bikesharing program share a symbiotic relationship: Trains need bikes for last-mile problems, and bikes need trains for ridership.
+                p
+                    | Los Angeles has made made major strides in changing its reputation as a car-centric, congested city.
+                    | And bikesharing, along with its aggressive expansion of bus and rail lines, is one way they are
+                    | looking to the future. With this data dashboard,
+                    em I hope to help my city make better data-driven decisions, to keep improving and expanding their bikesharing program, and to help make Los Angeles a more convenient, vibrant, and transit-friendly place to live.
+                h2 About
+                p
+                    | This project was developed as part of Capital One's MindSumo Coding Challenge. I took publicly
+                    | available data from the Los Angeles Metro website, cleaned it and analyzed it, hoping to find
+                    | trends that answer critical questions that could help Metro in its bikeshare expansion. The following
+                    | technologies were used to build this data visualization site:
+                ul
+                    li ExpressJS
+                    li nodeJS
+                    li Bootstrap
+                    li Google Charts API
+                    li Charts.js
+                h2 Trends
+                p Click on any of the numbers below to expand the screen and explore the data.
+                #accordion.panel-group
+                    .panel.panel-default
+                        .panel-heading
+                            h4.panel-title
+                                a(data-toggle='collapse' data-parent='#accordion' href='#collapse1') 1. Three Interesting Trends
+                        #collapse1.panel-collapse.collapse.in
+                            .panel-body
+                                #chart_div
+                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    .panel.panel-default
+                        .panel-heading
+                            h4.panel-title
+                                a(data-toggle='collapse' data-parent='#accordion' href='#collapse2') 2. Most Popular Start/Stop Locations
+                        #collapse2.panel-collapse.collapse
+                            .panel-body
+                                #map1
+                                #map2
+                                #map3
+                                script.
+                                    function initMap() {
+                                        var start = {lat: 34.0508804, lng: -118.24825};
+                                        var end = {lat: 34.04855, lng: -118.259048};
+                                        var comboStart = {lat: 34.0519409, lng: -118.24353};
+                                        var comboEnd = {lat: 34.0566101, lng: -118.23721};
+                                        var map1 = new google.maps.Map(
+                                            document.getElementById('map1'), {zoom: 15, center: start});
+                                        var marker1 = new google.maps.Marker({position: start, map: map1});
+                                        var map2 = new google.maps.Map(
+                                            document.getElementById('map2'), {zoom: 15, center: end});
+                                        var marker2 = new google.maps.Marker({position: end, map: map2});
+                                        var map3 = new google.maps.Map(
+                                            document.getElementById('map3'), {zoom: 13, center: comboStart});
+                                        var marker3 = new google.maps.Marker({position: comboStart, map: map3});
+                                        var marker4 = new google.maps.Marker({position: comboEnd, map: map3});
+
+                                    }
+
+
+                                script(async = '' defer = '' src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDwcUc894kwE70k2vVGqLN5nodjTj77ltk&callback=initMap')
+
+                    .panel.panel-default
+                        .panel-heading
+                            h4.panel-title
+                                a(data-toggle='collapse' data-parent='#accordion' href='#collapse3') 3. Average Distance Travelled
+                        #collapse3.panel-collapse.collapse
+                            .panel-body
+                                div(align="center")
+                                    img(src="images/bike.png")
+                                    h2 On average, Angelinos travelled
+                                        strong  0.739 miles
+                                    h2 per bikeshare trip.
+                    .panel.panel-default
+                        .panel-heading
+                            h4.panel-title
+                                a(data-toggle='collapse' data-parent='#accordion' href='#collapse4') 4. Regular Bikeshare Commuters
+                        #collapse4.panel-collapse.collapse
+                            .panel-body
+                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    .panel.panel-default
+                        .panel-heading
+                            h4.panel-title
+                                a(data-toggle='collapse' data-parent='#accordion' href='#collapse5') 5. Ridership Season Trends
+                        #collapse5.panel-collapse.collapse
+                            .panel-body
+                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    .panel.panel-default
+                        .panel-heading
+                            h4.panel-title
+                                a(data-toggle='collapse' data-parent='#accordion' href='#collapse6') 6. Daily Bike Net Change Trends
+                        #collapse6.panel-collapse.collapse
+                            .panel-body
+                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    .panel.panel-default
+                        .panel-heading
+                            h4.panel-title
+                                a(data-toggle='collapse' data-parent='#accordion' href='#collapse7') 7. Trip Route Category-Passholder Breakdown
+                        #collapse7.panel-collapse.collapse
+                            .panel-body
+                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+
+
+
+
+
