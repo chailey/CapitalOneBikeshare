@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="de6ad76c-de58-4d58-823f-58da0691cec9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,6 +33,7 @@
           <entry key="csv" value="1" />
           <entry key="html" value="1" />
           <entry key="js" value="17" />
+          <entry key="json" value="1" />
           <entry key="png" value="1" />
           <entry key="pug" value="10" />
         </counts>
@@ -41,6 +43,7 @@
           <entry key="CSS" value="2" />
           <entry key="HTML" value="1" />
           <entry key="Image" value="1" />
+          <entry key="JSON" value="1" />
           <entry key="Jade" value="10" />
           <entry key="JavaScript" value="17" />
           <entry key="PLAIN_TEXT" value="1" />
@@ -50,12 +53,14 @@
         <counts>
           <entry key="html" value="11" />
           <entry key="js" value="19670" />
+          <entry key="json" value="30" />
           <entry key="pug" value="22689" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="11" />
+          <entry key="JSON" value="30" />
           <entry key="Jade" value="22689" />
           <entry key="JavaScript" value="19670" />
         </counts>
@@ -73,11 +78,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/layout.pug">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="393">
               <caret line="82" selection-start-line="82" selection-end-line="82" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -147,6 +161,7 @@
         <option value="$PROJECT_DIR$/views/layout.pug" />
         <option value="$PROJECT_DIR$/views/index.pug" />
         <option value="$PROJECT_DIR$/public/javascripts/charts.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -167,7 +182,7 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1165" />
+    <option name="x" value="1288" />
     <option name="width" value="763" />
     <option name="height" value="1088" />
   </component>
@@ -301,12 +316,12 @@
       <workItem from="1541032660297" duration="21049000" />
       <workItem from="1541148655344" duration="1721000" />
       <workItem from="1541299399739" duration="56488000" />
-      <workItem from="1541409219948" duration="652000" />
+      <workItem from="1541409219948" duration="1046000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121143000" />
+    <option name="totallyTimeSpent" value="121537000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -318,7 +333,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="932" y="0" width="610" height="870" extended-state="0" />
+    <frame x="1031" y="0" width="610" height="870" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.27891606" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -453,6 +469,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
           <caret line="82" selection-start-line="82" selection-end-line="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
         </state>
       </provider>
     </entry>
