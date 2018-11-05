@@ -4,39 +4,65 @@ extends layout
 block content
 
 
-    //.container-fluid
-        //.row
-
     .container-fluid
         .row
 
             nav.col-md-2.d-none.d-md-block.bg-light.sidebar
                 .sidebar-sticky
-                button(class="btn btn-info" data-toggle='collapse' data-target='#sideBar') About Me
-                div#sideBar.collapse
-                    h3(align='center') Chris Hailey
-                    p You can reach out to me via email (hailey[at]usc[dot]edu). Check out my Github repo @chailey for more cool projects like this! Be sure to follow me on Medium @chris_hailey and Twitter @ChrisH_fintech
 
-            main.col-md-9.ml-sm-auto.col-lg-10.px-4(role='main')
+                //SIDE BAR THAT CONTAINS THE NAVIGATION MENU AND THE ABOUT ME BUTTON
+                div#navBar(style= "position:fixed; width: 15%; margin: 0 auto;", align="center")
+                    h4
+                        a(href="#jumptoTop") Home
+                    h4
+                        a(href="#jumptoIntro") Intro
+
+                    h4
+                        a(href="#jumptoAbout") About
+
+                    h4
+                        a(href="#jumptoTrends") Trends
+
+                    button(class="btn btn-info" data-toggle='collapse' data-target='#sideBar') About Me
+                    br
+                    //DROP DOWN ABOUT ME BUTTON
+                    div#sideBar.collapse
+                        h3(align='center') Chris Hailey
+                        img(src="images/chrispic.jpg", align="center")
+                        p I am currently a sophomore at the University of Southern California, majoring in Computer Science and minoring in Business Finance. You can reach out to me via
+                            a(href="mailto:hailey@usc.edu" )  email.
+                            |  To see more projects like this, check out my
+                            a(href="github.com/chailey")  Github
+                            | . You can stay updated on my life by following me on
+                            a(href="www.medium.com/@chris_hailey")  Medium
+                            |  and
+                            a(href="www.twitter.com/ChrisH_fintech")  Twitter
+                            |!
+
+
+
+            //MAIN SECTION THAT CONTAINS THE CONTENT OF THE SITE
+            main(id="jumptoTop").col-md-7.ml-sm-auto.col-lg-10.px-4(role='main')
                 .d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3
+                //BUTTON THAT APPEARS AND SCROLLS DOWN. IF YOU CLICK, IT TAKES YOU BACK TO THE TOP
+                button#myBtn(onclick='topFunction()' title='Go to top') Top
 
-
+                //TOP TEXT
                 div(align="center")
-                    h1(style="color:blue;") METRO
-                    h1(style="color:red;") BIKESHARE
-                    h1(style="color:black;") DATA VISUALIZATION
+                    h1(style="color:#428bca;") METRO BIKESHARE
+                    h1(style="color:#d9534f;") DATA VISUALIZATION
                     img(src="images/los-angeles-metro-logo.png")
                     img(src="images/bike.png")
                     img(src="images/bike.png")
                     img(src="images/analysis.png")
 
 
-
-                h2 Intro
+                //INTRO SECTION
+                h2(id="jumptoIntro") Intro
                 p
                     strong Welcome!
                     |  Thank you for checking out my data visualization dashboard for bike sharing trends in Los Angeles!
-                    | While biking is itself a centuries old activity, the concept of bike sharing has only been developed
+                    | While biking is itself a centuries old activity, the concept of bike sharing has only developed
                     | in the last decade. It started off mostly as small scale operations in bicycle friendly cities like
                     | New York and Amsterdam, but it has since received exponential growth all around the world and is only
                     | becoming bigger each year:
@@ -49,18 +75,23 @@ block content
                     | One of the major benefits to having a bikesharing program is its ease of access to people anywhere in
                     | the city, as well as its ability to solve one of the biggest challenges in transportation planning:
                     | the last-mile problem. Here in Los Angeles, in fact, much of the bikesharing growth stems from the
-                    | placement of bike stations near transit stops, like this one near USC:
+                    | placement of bike stations near transit stops, like this one near a USC bus stop:
                 div(align="center")
                     figure
                         img(src="images/metrobikes.jpg", width="500px", height="350px")
                         figcaption
-                            em Figure 2: A Metro Bikeshare station near USC.
+                            em Figure 2: A Metro Bikeshare station near a USC bus stop.
 
                 p
                     | While Los Angeles may be new to the bikesharing game, one must not underestimate the effects it has
-                    | had on the city already. With these bike stations near rail and bus lines, as well as densely populated
-                    | areas, many people have become incentivized to abandon their personal cars and move to more efficient
-                    | modes of public transportation.
+                    | had on the city already. In just a matter of a few years, Los Angeles has gone from having little to no
+                    | bicycle program to having a station by nearly every transit stop and major attraction in the downtown area.
+                    | This rapid expansion reveals the potential that bikesharing can have on the community and how it can make LA
+                    | a more liveable city.
+
+
+                .container
+
                 div(align="center")
                     figure
                         img(src="images/metrotrain.jpg", width="500px", height="300px")
@@ -70,20 +101,40 @@ block content
                     | Los Angeles has made made major strides in changing its reputation as a car-centric, congested city.
                     | And bikesharing, along with its aggressive expansion of bus and rail lines, is one way they are
                     | looking to the future. With this data dashboard,
-                    em I hope to help my city make better data-driven decisions, to keep improving and expanding their bikesharing program, and to help make Los Angeles a more convenient, vibrant, and transit-friendly place to live.
-                h2 About
+                    em  I hope to help my city make better data-driven decisions on improving and expanding their promising bikesharing program.
+                h2(id="jumptoAbout") About
                 p
                     | This project was developed as part of Capital One's MindSumo Coding Challenge. I took publicly
                     | available data from the Los Angeles Metro website, cleaned it and analyzed it, hoping to find
                     | trends that answer critical questions that could help Metro in its bikeshare expansion. The following
                     | technologies were used to build this data visualization site:
                 ul
-                    li ExpressJS
-                    li nodeJS
-                    li Bootstrap
-                    li Google Charts API
-                    li Charts.js
-                h2 Trends
+                    li
+                        a(href="https://expressjs.com/") ExpressJS
+                    li
+                        a(href="https://nodejs.org/en/") NodeJS
+                    li
+                        a(href="https://getbootstrap.com/") Bootstrap
+                    li
+                        a(href="https://c3js.org/") C3.js
+                    li
+                        a(href="https://plot.ly/") Plot.ly
+                    li
+                        a(href="https://developers.google.com/maps/documentation/javascript/tutorial") Google Maps API
+
+
+                h4 Sources:
+                ul
+                    li Figure 1:
+                        a(href= "https://priceonomics.com/public-bike-sharing-analyzing-the-usage-data-in-us/")  Priceconomics
+                    li Figure 2: My own picture
+                    li Figure 3:
+                        a(href="https://www.lamag.com/longform/ii-rode-the-entire-metro-in-one-day-this-is-what-i-learned/")  LA Magazine
+                    li Data: Metro Bikeshare Open Source Data
+                    li Creating this website: Determination and coffee
+
+                //TRENDS SECTION
+                h2(id="jumptoTrends") Trends
                 p Click on any of the numbers below to expand the screen and explore the data.
                 #accordion.panel-group
                     .panel.panel-default
@@ -92,40 +143,58 @@ block content
                                 a(data-toggle='collapse' data-parent='#accordion' href='#collapse1') 1. Three Interesting Trends
                         #collapse1.panel-collapse.collapse.in
                             .panel-body
-                                #chart_div
-                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                .container
+                                h5 1.1: Number of riders per month
+                                #chartQ11
+                                p This displays the monthly ridership from June of 2016 to March of 2017. While there are some upticks in ridership
+                                    | from July to August and from February to March, much of the data indicates a decline in number of monthly Metro
+                                    | Bikeshare users. This may be a testament to the changing seasons. However, Los Angeles has a mild climate, and
+                                    | its shift from warmer summers to colder winters does not trigger a major decrease in outdoor activity. I look at this
+                                    | declining trend with concern -- this means that Metro may not be marketing Bikeshare's benefits to enough people. Metro should
+                                    | increase its marketing campaign to better target to specific markets -- DTLA commuters, students, and tourists are three major ones to consider.
+                                h5 1.2: Categorization of route types
+                                #chartQ12
+                                p There is a far greater number of one-way trips than there are round trips. That's because round trips are generally not practical
+                                    | -- people usually have a distinct origin and destination. I can figure that the only people doing round-trips are those who are
+                                    | temporarily visiting the city, running errands, or touring.
+                                h5 1.3: Most used bike ID's
+                                #chartQ13
+                                p This shows the 5 most used bikes on Metro's bikeshare system. Bike 6717 is the most used bike on the whole system.
+                                    |  By taking a look at which bikes are being ridden on the most,
+                                    |  Metro can better determine which bicycles will most likely need servicing in the future, which in the long run could
+                                    |  reduce costs and increase service quality.
                     .panel.panel-default
                         .panel-heading
                             h4.panel-title
                                 a(data-toggle='collapse' data-parent='#accordion' href='#collapse2') 2. Most Popular Start/Stop Locations
                         #collapse2.panel-collapse.collapse
                             .panel-body
-                                #map1
-                                #map2
-                                #map3
-                                script.
-                                    function initMap() {
-                                        var start = {lat: 34.0508804, lng: -118.24825};
-                                        var end = {lat: 34.04855, lng: -118.259048};
-                                        var comboStart = {lat: 34.0519409, lng: -118.24353};
-                                        var comboEnd = {lat: 34.0566101, lng: -118.23721};
-                                        var map1 = new google.maps.Map(
-                                            document.getElementById('map1'), {zoom: 15, center: start});
-                                        var marker1 = new google.maps.Marker({position: start, map: map1});
-                                        var map2 = new google.maps.Map(
-                                            document.getElementById('map2'), {zoom: 15, center: end});
-                                        var marker2 = new google.maps.Marker({position: end, map: map2});
-                                        var map3 = new google.maps.Map(
-                                            document.getElementById('map3'), {zoom: 13, center: comboStart});
-                                        var marker3 = new google.maps.Marker({position: comboStart, map: map3});
-                                        var marker4 = new google.maps.Marker({position: comboEnd, map: map3});
+                                script(async='' defer='' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDwcUc894kwE70k2vVGqLN5nodjTj77ltk&callback=initMap')
+                                h5 Disclaimer: This section uses Google Maps API to display locations on a maps. Due to a change in Google API pricing, some of the maps may not
+                                    |  display. You will still, however, know the various start/stop locations. If the canvas displays a message that says 'This page can't load
+                                    |  Google Maps correctly.', try hitting 'OK' and then you should be able to see the map.
+                                br
 
-                                    }
+                                h5 2.1: Most popular start location
+                                div(align="center")
+                                    #map1
+                                p The most popular starting location is the bike station on the corner of Broadway and W 3rd St. (station id 3069), adjacent to
+                                    |  the Grand Central Market and in close proximity to the Pershing Square Station.
 
+                                h5 2.2: Most popular stop location
+                                div(align="center")
+                                    #map2
+                                p The most popular stopping location is the station on the corner of 7th St. and Flower St. (station id 3005), adjacent to the
+                                    | 7th Street/Metro Center Station. The popularity of this station reveals that many people who bikeshare
+                                    | use it as a means to get to other modes of transit.
 
-                                script(async = '' defer = '' src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDwcUc894kwE70k2vVGqLN5nodjTj77ltk&callback=initMap')
+                                h5 2.3: Most popular start/stop combination
+                                div(align="center")
+                                    #map3
+                                p The most common start to end path goes from a station adjacent to Los Angeles City Hall (station id 3030) to Union Station (station id 3014).
+                                    | Due to the high density of commercial and government jobs in that area, we can presume that this route would
+                                    | be particularly popular among employees in the area trying to get home (by train). City Hall to Union Station is
+                                    | an optimal distance for biking: It is too short for driving, and it is too long for walking.
 
                     .panel.panel-default
                         .panel-heading
@@ -136,47 +205,118 @@ block content
                                 div(align="center")
                                     img(src="images/bike.png")
                                     h2 On average, Angelinos travelled
-                                        strong  0.739 miles
+                                    h2#dist
                                     h2 per bikeshare trip.
+
+                                    h6 That's pretty much the ideal distance for biking in an urban environment.
+                                        |  Three miles is too long for walking, but it is too short to merit driving a car or waiting for a bus.
+
                     .panel.panel-default
                         .panel-heading
                             h4.panel-title
                                 a(data-toggle='collapse' data-parent='#accordion' href='#collapse4') 4. Regular Bikeshare Commuters
                         #collapse4.panel-collapse.collapse
                             .panel-body
-                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                h5 4.1: Categorization of pass types
+                                #chartQ4
+                                p It is safe to say that those who hold Monthly or Flex (annual) passes are regular commuters, which make
+                                    | up around 70% of all Bikeshare users. This makes sense, because most are incentivized to use bikesharing
+                                    | by the better value of monthly or yearly subscriptions.
+
                     .panel.panel-default
                         .panel-heading
                             h4.panel-title
                                 a(data-toggle='collapse' data-parent='#accordion' href='#collapse5') 5. Ridership Season Trends
                         #collapse5.panel-collapse.collapse
                             .panel-body
-                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                h5 5.1: Average Seasonal Time Duration
+                                #chartQ51
+                                p The average duration of each ride increased from Summer to Winter. This was calculated by taking the total durations for rides
+                                    |  from each season and dividing it by the number of rides per season, hence corrected for differences in seasonal ridership.
+                                    |  While these statistics may seem unusual, given that people would not want to spend much time outside in the winter, I do have
+                                    |  a theory: In a California winter, the weather outside is not cold enough for transit activities to be impacted. However, in
+                                    |  the cold and/or rain, it does take longer for tasks to be completed when all the other cars/bikes on the road are slower.
+                                    |  Thus it wouldn't be too unreasonable if the average duration to complete the same distance in a colder season was greater.
+                                h5 5.2 Seasonal Pass Type Distribution
+                                #chartQ52
+                                p The Monthly Pass is the most popular pass type for each season.
+                                h5 5.3 Seasonal Trip Type Distribution
+                                #chartQ53
+                                p The One Way trip remains the most popular type of trip, despite changes in season.
+
+                                h5 5.4 Seasonal Ridership
+                                #chartQ54
+                                p Just as ridership declined for each month, it obviously declined for each season. However, it is interesting to note the differences in the charts:
+                                    |  The seasonal ridership (macro trend) shows a more linear pattern, while the monthly ridership (micro trend) shows a more asymptotic curve.
+
+
+
                     .panel.panel-default
                         .panel-heading
                             h4.panel-title
                                 a(data-toggle='collapse' data-parent='#accordion' href='#collapse6') 6. Daily Bike Net Change Trends
                         #collapse6.panel-collapse.collapse
                             .panel-body
-                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                h5 6.1: Distribution of bike use per hour
+                                div(align="center")
+                                    #chartQ61
+                                p This chart shows the distribution of bike use per hour. There is a morning rush hour around 8 AM, a
+                                    |  mid-day peak around 12 PM, and an afternoon rush hour at 5 PM. The morning and afternoon upticks
+                                    |  make sense, as those are times when people are trying to get to/from work. But I was a little
+                                    |  surprised at the mid-day peak -- perhaps it might be visitors and tourists exploring the city or
+                                    |  people taking a short commute to a lunch spot.
+
+                                h5 6.2: Major AM starting station, PM ending station
+                                div(align="center")
+                                    #map4
+                                p The 'Sam' shows the marker where there are the most number of starting trips in the morning. Unsurprisingly, it is
+                                    |  Union Station, where people hop off the train and onto a bike as their last-mile transit to their office buildings
+                                    |  in Downtown Los Angeles. The 'Epm' shows the marker where there are the most number of bikes being dropped off in the evening.
+                                    |  While 'Epm' is not close to any particular transit stop or attraction, it does benefit from a central location in Downtown LA.
+                                    |  People who are done for the day can drop of the bike at 'Epm' and either enjoy the numerous DTLA attractions or take one of
+                                    |  many transit opportunities in the area.
+
+                                p What these two graphs show is that Metro should consider adding more bikes at Union Station at 8 AM to anticipate a crunch in people
+                                    | using the bikesharing service, as well as increasing the capacity of the 'Epm' station on the corner of 6th St. and Main St. to
+                                    | ensure that there are spaces available for the many people dropping off their bikes on that particular station.
                     .panel.panel-default
                         .panel-heading
                             h4.panel-title
                                 a(data-toggle='collapse' data-parent='#accordion' href='#collapse7') 7. Trip Route Category-Passholder Breakdown
                         #collapse7.panel-collapse.collapse
                             .panel-body
-                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                h5 5.1: Pass Type Categorization for Round Trips
+                                #chartQ71
+                                h5 5.2: Pass Type Categorization for One Ways
+                                #chartQ72
+                                p What these two charts describes is how the pass types differ for each trip type. Walk-ups tend to
+                                    |  be popular with Round Trips. That's because the people who do round trips are visitors and tourists
+                                    |  who want to explore the city or want to run a few errands.
+                                    |  These people generally do not have a subscription package for
+                                    |  the Metro Bikeshare program because they are not continuous users of bikesharing. Meanwhile, one way trips
+                                    |  tend to have more people who have Monthly Passes: Those who have a subscription use the
+                                    |  bikes on a regular basis, and they have a set starting and ending destination,
+                                    |  whether that be going from home to work, or work to another transit stop, or any other combination.
 
+    script(src='javascripts/charts.js')
 
-
-
-
+    script.
+        //Functionality for the 'top' button that appears when scrolling
+        //ADOPTED FROM W3Schools: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("myBtn").style.display = "block";
+            } else {
+                document.getElementById("myBtn").style.display = "none";
+            }
+        }
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
 

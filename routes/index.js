@@ -1,7 +1,8 @@
-var Papa = require("fast-csv");
+
 var express = require('express');
 
 var router = express.Router();
+
 
 
 
@@ -11,10 +12,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Metro Bikeshare' });
-  //res.render('index', { results: results});
+
 
 });
-
-
-
 module.exports = router;

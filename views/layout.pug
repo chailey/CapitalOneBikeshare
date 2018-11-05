@@ -2,64 +2,85 @@ doctype html
 html
     head
         title= title
+
+        //get bootstrap CSS
         link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
 
-        script(src='javascripts/bootstrap.min.js')
-        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
-        script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js')
-        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js')
-        script(type='text/javascript' src='https://www.gstatic.com/charts/loader.js')
+        //get Metro Icon
+        link(rel='icon' href='images/los-angeles-metro-logo.png')
 
-        script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDwcUc894kwE70k2vVGqLN5nodjTj77ltk&callback=initMap' async='' defer='')
+        //get JQuery JS
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+
+        //get bootstrap JS
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js')
+
+        //get c3 CSS
+        link(href='stylesheets/c3.css' rel='stylesheet' type='text/css')
+
+        // get d3 JS and c3 JS
+        script(src='javascripts/d3.v3.min.js' charset='utf-8')
+        script(src='javascripts/c3.min.js')
+
+        //get plotly JS
+        script(src='https://cdn.plot.ly/plotly-latest.min.js')
+
+
+        //get math JS
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.2.3/math.js')
+
+        //get PapaParse JS
+        script(src='javascripts/papaparse.min.js')
+
+        //get the JS file where we analyze the data
+        script(src='javascripts/charts.js')
+
+
         style.
             /* Set the size of the div element that contains the map */
+
             #map1 {
-                height: 200px; /* The height is 400 pixels */
-                width: 20%; /* The width is the width of the web page */
+                height: 300px; /* The height is 300 pixels */
+                width: 60%; /* The width is 60% the width of the web page */
             }
 
             #map2 {
-                height: 200px; /* The height is 400 pixels */
-                width: 20%; /* The width is the width of the web page */
+                height: 300px; /* The height is 300 pixels */
+                width: 60%; /* The width is 60% the width of the web page */
             }
 
             #map3 {
-                height: 200px; /* The height is 400 pixels */
-                width: 20%; /* The width is the width of the web page */
+                height: 300px; /* The height is 300 pixels */
+                width: 60%; /* The width is the 60% width of the web page */
             }
 
-        script(type='text/javascript').
-            // Load the Visualization API and the corechart package.
-            google.charts.load('current', {'packages': ['corechart']});
-            // Set a callback to run when the Google Visualization API is loaded.
-            google.charts.setOnLoadCallback(drawChart);
-            // Callback that creates and populates a data table,
-            // instantiates the pie chart, passes in the data and
-            // draws it.
-            function drawChart() {
-                // Create the data table.
-                var data = new google.visualization.DataTable();
-                data.addColumn('string', 'Topping');
-                data.addColumn('number', 'Slices');
-                data.addRows([
-                    ['Mushrooms', 3],
-                    ['Onions', 1],
-                    ['Olives', 1],
-                    ['Zucchini', 1],
-                    ['Pepperoni', 2]
-                ]);
-                // Set chart options
-                var options = {
-                    'title': 'How Much Pizza I Ate Last Night',
-                    'width': 400,
-                    'height': 300
-                };
-                // Instantiate and draw our chart, passing in some options.
-                var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-                chart.draw(data, options);
+            #map4 {
+                height: 300px; /* The height is 300 pixels */
+                width: 60%; /* The width is 60% the width of the web page */
             }
-            //var result = results;
-            //alert(result);
+
+            /* Set the style of the button that contains my information */
+            #myBtn {
+                display: none;
+                position: fixed;
+                bottom: 20px;
+                left: 30px;
+                z-index: 99;
+                font-size: 18px;
+                border: none;
+                outline: none;
+                background-color: lightblue;
+                color: white;
+                cursor: pointer;
+                padding: 15px;
+                border-radius: 4px;
+            }
+
+            #myBtn:hover {
+                background-color: #555;
+            }
+
+
 
 
     body
