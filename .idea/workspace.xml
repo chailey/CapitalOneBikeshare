@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de6ad76c-de58-4d58-823f-58da0691cec9" name="Default Changelist" comment="" />
+    <list default="true" id="de6ad76c-de58-4d58-823f-58da0691cec9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -50,14 +53,14 @@
         <counts>
           <entry key="html" value="11" />
           <entry key="js" value="19670" />
-          <entry key="json" value="30" />
+          <entry key="json" value="33" />
           <entry key="pug" value="22689" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="11" />
-          <entry key="JSON" value="30" />
+          <entry key="JSON" value="33" />
           <entry key="Jade" value="22689" />
           <entry key="JavaScript" value="19670" />
         </counts>
@@ -87,8 +90,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+            <state relative-caret-position="34">
+              <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -313,12 +316,12 @@
       <workItem from="1541032660297" duration="21049000" />
       <workItem from="1541148655344" duration="1721000" />
       <workItem from="1541299399739" duration="56488000" />
-      <workItem from="1541409219948" duration="1314000" />
+      <workItem from="1541409219948" duration="1645000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121805000" />
+    <option name="totallyTimeSpent" value="122136000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -331,6 +334,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="881" y="0" width="761" height="882" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.27891606" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -470,8 +474,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+        <state relative-caret-position="34">
+          <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
         </state>
       </provider>
     </entry>
